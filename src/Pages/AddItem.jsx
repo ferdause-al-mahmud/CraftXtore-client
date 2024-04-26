@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../Components/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddItem = () => {
     const { user } = useContext(AuthContext)
@@ -31,7 +32,22 @@ const AddItem = () => {
             user_email: email,
             user_name: name
         };
-
+        fetch('http://localhost:3333/items', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(addedItem)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                Swal.fire({
+                    title: "Good job!",
+                    text: "You clicked the button!",
+                    icon: "success"
+                });
+            })
         console.log(addedItem)
     }
     return (
