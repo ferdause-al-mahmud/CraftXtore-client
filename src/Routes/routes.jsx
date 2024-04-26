@@ -2,8 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Pages/MainLayout";
 import ErrorPage from "../Shared/ErrorPage";
 import Login from "../Pages/Login";
-import Register from "../Pages/Register";
 import Home from "../Pages/Home";
+import Register from "../Pages/Register";
+
 import AddItem from "../Pages/AddItem";
 import AllArts from "../Pages/AllArts";
 import MyArtsCrafts from "../Pages/MyArtsCrafts";

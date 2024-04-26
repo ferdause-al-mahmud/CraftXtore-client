@@ -1,16 +1,49 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoEye, IoEyeOff } from "react-icons/io5";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
+import { AuthContext } from "../Components/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../Firebase/firebase.config";
 
 const Register = () => {
-
+    const { createUser } = useContext(AuthContext);
     const [eye, setEye] = useState(false);
+    const navigate = useNavigate();
+
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])/;
+
     const handleEye = () => {
         setEye(!eye)
     }
     const handleRegister = (e) => {
         e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const email = form.get("email");
+        const password = form.get("password");
+        const name = form.get("name");
+        const url = form.get("photourl");
+        if (!passwordRegex.test(password)) {
+            return (toast.error("Password must have at least an uppercase and an lowercase letter"));
+        }
+        if (password.length < 6) {
+            return (toast.error("Password Length must be at least 6 character"));
+        }
+        createUser(email, password)
+            .then((result) => {
+                console.log(result.user)
+                updateProfile(auth.currentUser, { displayName: name, photoURL: url })
+                    .then(() => {
+                        toast.success("Registered successfully");
+                    })
+                navigate("/");
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                console.log(errorMessage)
+                // ..
+            });
     }
     return (
         <div>

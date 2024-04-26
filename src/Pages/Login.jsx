@@ -1,12 +1,72 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
+import { useContext } from "react";
+import { AuthContext } from "../Components/AuthProvider";
+import { toast } from "react-toastify";
 const Login = () => {
+    const { logIn, loginWithGoogle, loginWithGithub } = useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
     const handleLogin = e => {
         e.preventDefault();
-        console.log("okayy")
+        const form = new FormData(e.currentTarget);
+        const email = form.get("email");
+        const password = form.get("password");
+        logIn(email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log(user)
+                navigate(location?.state ? location.state : "/");
+                toast.success("Login success");
+                // ...
+            })
+            .catch((error) => {
+                toast.error(error.message, ",Login failed!");
+                console.log(error.message);
+            });
     }
+
+    //google login
+
+    const hanldeGoogle = () => {
+        loginWithGoogle()
+            .then((result) => {
+                navigate(location?.state ? location.state : "/");
+                toast.success("Login success");
+                const user = result.user;
+                console.log(user)
+
+                // ...
+            }).catch((error) => {
+                const errorMessage = error.message;
+                const email = error.customData.email;
+                console.log(errorMessage, email)
+                // ...
+            });
+    }
+
+    //github login
+
+    const hanldeGithub = () => {
+        loginWithGithub()
+            .then((result) => {
+
+                const user = result.user;
+                console.log(user)
+                navigate(location?.state ? location.state : "/");
+                toast.success("Login success");
+                // ...
+            }).catch((error) => {
+                const errorMessage = error.message;
+                const email = error.customData.email;
+                console.log(errorMessage, email)
+                // ...
+            });
+    }
+
     return (
         <div className=''>
             <Helmet>
@@ -52,8 +112,8 @@ const Login = () => {
                         <div>
                             <p className="text-center mb-3">Or sign up using</p>
                             <div className='flex gap-8 justify-center mb-3'>
-                                <button><FcGoogle className='text-3xl' /></button>
-                                <button><BsGithub className='text-3xl' /></button>
+                                <button onClick={hanldeGoogle}><FcGoogle className='text-3xl' /></button>
+                                <button onClick={hanldeGithub}><BsGithub className='text-3xl' /></button>
                             </div>
                         </div>
                         <div className='mb-3'>

@@ -6,12 +6,19 @@ import {
 } from "react-router-dom";
 import { router } from './Routes/routes';
 import { HelmetProvider } from 'react-helmet-async';
-
+import { ToastContainer } from 'react-toastify';
+import AuthProvider from './Components/AuthProvider';
+import 'react-toastify/dist/ReactToastify.css';
+import { Tooltip } from 'react-tooltip';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </HelmetProvider>
+    <ToastContainer />
+    <Tooltip id="my-tooltip" />
   </React.StrictMode>
   ,
 )

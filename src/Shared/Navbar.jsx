@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import { AuthContext } from "../Components/AuthProvider";
+import { toast } from "react-toastify";
+import { FaRegUser } from "react-icons/fa";
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
     const navlinks = <>
         <li><NavLink to="/">Home</NavLink></li>
 
@@ -8,10 +12,17 @@ const Navbar = () => {
         <li><NavLink to="/additem">Add </NavLink></li>
         <li><NavLink to="/myartscarts">My Arts & Crafts</NavLink></li>
     </>
-
+    const handleSignOut = () => {
+        logOut()
+            .then(() => {
+                toast.success("Log out successfully")
+            }).catch((error) => {
+                console.log(error)
+            });
+    }
     return (
-        <div className="bg-base-300 ">
-            <div className="navbar mb-12 lg:w-[1170px]  mx-auto ">
+        <div className="bg-base-300 mb-10 ">
+            <div className="navbar lg:w-[1170px]  mx-auto ">
                 <div className="navbar-start ">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,7 +40,20 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div><NavLink to="/login"><button className="btn !bg-base-300 border-none hover:!bg-orange-500 hover:!text-white">Login</button></NavLink></div>
+                    {user ? <>
+
+                        {
+                            user.photoURL ?
+                                (<div data-tooltip-id='my-tooltip' data-tooltip-content={user.displayName} className="rounded-full mr-2  flex items-center justify-center bg-blue-500"> <img className="w-10 rounded-full" src={user.photoURL} /></div>)
+                                :
+                                (<div data-tooltip-id='my-tooltip' data-tooltip-content={user.displayName} className="rounded-full p-2 md:p-4 mr-2 tooltip tooltip-bottom flex items-center justify-center bg-blue-500" data-tip={user.displayName}><FaRegUser /></div>)
+                        }
+
+                        <div><button className="btn" onClick={handleSignOut}>Logout</button></div>
+                    </> : <div>
+                        <NavLink to="/login" className="btn bg-base-300 border-none">Login</NavLink>
+                        <NavLink className="btn bg-base-300 border-none" to="/register">Register</NavLink>
+                    </div>}
 
 
                 </div>
