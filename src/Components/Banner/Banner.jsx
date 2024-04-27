@@ -13,7 +13,7 @@ import { Autoplay, Navigation } from 'swiper/modules';
 
 const Banner = () => {
     return (
-        <div className="max-h-[720px]">
+        <div className="max-h-[720px] mb-10 ">
             <div>
                 <Swiper
                     loop={true}
@@ -25,9 +25,9 @@ const Banner = () => {
                     }}
                     navigation={true}
                     modules={[Autoplay, Navigation]}
-                    className="mySwiper"
+                    className="mySwiper rounded-sm md:rounded-lg"
                 >
-                    <SwiperSlide><img className='max-h-[720px]' src="https://i.ibb.co/dW5bYvR/plate-with-karp-century-chinese-porcelain.jpg" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="https://i.ibb.co/dW5bYvR/plate-with-karp-century-chinese-porcelain.jpg" alt="" /></SwiperSlide>
                     <SwiperSlide><img src="https://i.ibb.co/0MtWqSb/2107201320122.jpg" alt="" /></SwiperSlide>
                     <SwiperSlide><img src="https://i.ibb.co/rtTvmYj/2151003052-1.jpg" alt="" /></SwiperSlide>
                 </Swiper>

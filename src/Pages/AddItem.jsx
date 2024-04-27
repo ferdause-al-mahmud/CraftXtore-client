@@ -43,15 +43,15 @@ const AddItem = () => {
             .then(data => {
                 console.log(data)
                 Swal.fire({
-                    title: "Good job!",
-                    text: "You clicked the button!",
+                    title: "Success!",
+                    text: "Item added!",
                     icon: "success"
                 });
             })
         console.log(addedItem)
     }
     return (
-        <div className='bg-[#ffebeb] p-6 md:p-20 rounded-lg'>
+        <div className='bg-[#ffebeb] p-6 md:p-20 rounded-lg mb-8'>
             <Helmet>
                 <title>CraftXtore | Add</title>
             </Helmet>
@@ -63,14 +63,14 @@ const AddItem = () => {
                         <div className="label">
                             <span className="label-text">Item Name</span>
                         </div>
-                        <input type="text" name='name' placeholder="Type here" className="input  w-full" />
+                        <input type="text" name='name' required placeholder="Type here" className="input  w-full" />
 
                     </label>
                     <label className="form-control md:w-1/2">
                         <div className="label">
                             <span className="label-text">Sub Category</span>
                         </div>
-                        <input type="text" name='quantity' placeholder="Type here" className="input  w-full" />
+                        <input type="text" name='quantity' required placeholder="Type here" className="input  w-full" />
                     </label>
                 </div>
                 <br />
@@ -79,14 +79,14 @@ const AddItem = () => {
                         <div className="label">
                             <span className="label-text">Price</span>
                         </div>
-                        <input type="text" name='supplier' placeholder="Type here" className="input  w-full" />
+                        <input type="text" name='supplier' required placeholder="Type here" className="input  w-full" />
 
                     </label>
                     <label className="form-control md:w-1/2">
                         <div className="label">
                             <span className="label-text">Rating</span>
                         </div>
-                        <input type="text" name='taste' placeholder="Type here" className="input  w-full" />
+                        <input type="text" name='taste' required placeholder="Type here" className="input  w-full" />
                     </label>
                 </div>
                 <br />
@@ -98,13 +98,13 @@ const AddItem = () => {
                             <div className="form-control">
                                 <label className="label cursor-pointer gap-4">
                                     <span className="label-text">Yes</span>
-                                    <input type="radio" className="radio" name="customization" value="Yes" />
+                                    <input type="radio" className="radio" name="customization" required value="Yes" />
                                 </label>
                             </div>
                             <div className="form-control">
                                 <label className="label cursor-pointer  gap-4">
                                     <span className="label-text">No</span>
-                                    <input type="radio" className="radio" name="customization" value="No" />
+                                    <input type="radio" className="radio" name="customization" required value="No" />
                                 </label>
                             </div>
                         </div>
@@ -116,13 +116,13 @@ const AddItem = () => {
                             <div className="form-control">
                                 <label className="label cursor-pointer gap-4">
                                     <span className="label-text">In stock</span>
-                                    <input type="radio" className="radio" name="stock" value="In stock" />
+                                    <input type="radio" className="radio" name="stock" required value="In stock" />
                                 </label>
                             </div>
                             <div className="form-control">
                                 <label className="label cursor-pointer  gap-4">
                                     <span className="label-text"> Made to Order</span>
-                                    <input type="radio" className="radio" name="stock" value="Made to Order" />
+                                    <input type="radio" className="radio" name="stock" required value="Made to Order" />
                                 </label>
                             </div>
                         </div>
@@ -135,14 +135,14 @@ const AddItem = () => {
                         <div className="label">
                             <span className="label-text">Processing Time</span>
                         </div>
-                        <input type="text" name='category' placeholder="Type here" className="input  w-full" />
+                        <input type="text" name='category' required placeholder="Type here" className="input  w-full" />
 
                     </label>
                     <label className="form-control md:w-1/2">
                         <div className="label">
                             <span className="label-text">Details</span>
                         </div>
-                        <input type="text" name='details' placeholder="Type here" className="input  w-full" />
+                        <input type="text" name='details' required placeholder="Type here" className="input  w-full" />
                     </label>
                 </div>
                 <br />
@@ -152,7 +152,7 @@ const AddItem = () => {
                             <span className="label-text">Description
                             </span>
                         </div>
-                        <textarea className="resize-none p-4 w-full rounded-lg " placeholder="Type here" name="description" rows="4" ></textarea>
+                        <textarea className="resize-none p-4 w-full rounded-lg " required placeholder="Type here" name="description" rows="4" ></textarea>
                     </label>
                 </div>
                 <br />
@@ -161,7 +161,7 @@ const AddItem = () => {
                         <div className="label">
                             <span className="label-text">Photo Url</span>
                         </div>
-                        <input type="text" name='photo' placeholder="Url" className="input  w-full" />
+                        <input type="text" name='photo' required placeholder="Url" className="input  w-full" />
                     </label>
                 </div>
                 <br />

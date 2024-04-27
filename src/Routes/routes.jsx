@@ -8,6 +8,8 @@ import Register from "../Pages/Register";
 import AddItem from "../Pages/AddItem";
 import AllArts from "../Pages/AllArts";
 import MyArtsCrafts from "../Pages/MyArtsCrafts";
+import ItemDetails from "../Components/ItemDetails/ItemDetails";
+import PrivateRoute from "../Components/Private/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +22,10 @@ export const router = createBrowserRouter([
                 element: <Home></Home>,
             },
             {
+                path: "/items/:id",
+                element: <PrivateRoute><ItemDetails></ItemDetails></PrivateRoute>,
+            },
+            {
                 path: "/login",
                 element: <Login></Login>,
             },
@@ -29,7 +35,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/additem",
-                element: <AddItem></AddItem>,
+                element: <PrivateRoute><AddItem></AddItem></PrivateRoute>,
             },
             {
                 path: "/allarts",
@@ -37,8 +43,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/myartscarts",
-                element: <MyArtsCrafts></MyArtsCrafts>,
+                element: <PrivateRoute><MyArtsCrafts></MyArtsCrafts></PrivateRoute>,
             },
+
         ]
     },
 ]);
