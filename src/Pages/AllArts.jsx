@@ -12,7 +12,7 @@ const AllArts = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr className="text-xl md:text-2xl">
+                        <tr className="text-xl text-black md:text-2xl">
                             <th></th>
                             <th>Item name</th>
                             <th>Price</th>

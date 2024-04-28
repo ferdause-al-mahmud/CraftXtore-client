@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Components/AuthProvider";
 import { toast } from "react-toastify";
 import { FaRegUser } from "react-icons/fa";
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [theme, setTheme] = useState("light");
     const navlinks = <>
         <li><NavLink to="/">Home</NavLink></li>
 
@@ -12,6 +13,17 @@ const Navbar = () => {
         <li><NavLink to="/additem">Add </NavLink></li>
         <li><NavLink to="/myartscarts">My Arts & Crafts</NavLink></li>
     </>
+    const handleToggle = (e) => {
+        if (e.target.checked) {
+            setTheme("aqua");
+        } else {
+            setTheme("light");
+        }
+    };
+    useEffect(() => {
+        document.querySelector("html").setAttribute("data-theme", theme);
+    }, [theme]);
+
     const handleSignOut = () => {
         logOut()
             .then(() => {
@@ -20,6 +32,7 @@ const Navbar = () => {
                 console.log(error)
             });
     }
+
     return (
         <div className="bg-base-300 mb-10 ">
             <div className="navbar lg:w-[1170px]  mx-auto ">
@@ -35,11 +48,12 @@ const Navbar = () => {
                     <Link to='/' className="font-bold p-2 rounded-lg btn-ghost text-[16px] md:text-xl">Craft<span className="text-orange-500">X</span>tore</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 md:text-[16px] font-semibold">
                         {navlinks}
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    <input type="checkbox" value="synthwave" onClick={handleToggle} className="toggle theme-controller mr-3" />
                     {user ? <>
 
                         {

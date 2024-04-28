@@ -15,7 +15,7 @@ const ItemDetails = () => {
     }, [id])
     const { photo, item_name, short_description, price, rating, customization, processing_time, stockStatus } = item;
     return (
-        <div className="hero md:h-[800px] bg-base-200 mb-10">
+        <div className="hero md:h-[800px] bg-gray-200 rounded-lg mb-10">
             <div className="hero-content flex-col md:flex-row-reverse">
                 <img src={photo} className="md:w-[40%] md:max-w-lg rounded-lg shadow-2xl" />
                 <div className="md:w-[60%]">

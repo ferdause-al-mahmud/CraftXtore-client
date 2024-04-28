@@ -7,7 +7,7 @@ const CraftItemCard = ({ item }) => {
 
     return (
         <div>
-            <div className="card card-side bg-base-100 shadow-xl">
+            <div className="card card-side shadow-xl">
                 <figure><img className="md:[w-40%] md:max-h-[300px]" src={photo} alt="Movie" /></figure>
                 <div className="md:w-[60%] card-body justify-center space-y-3">
                     <h2 className="card-title text-2xl">{item_name}</h2>

@@ -3,6 +3,7 @@ import UseAuth from "../Components/UseAuth/UseAuth";
 import { useEffect, useState } from "react";
 import MyAddedCard from "../Components/MyAddedCard/MyAddedCard";
 import Swal from "sweetalert2";
+import { FaFilter } from "react-icons/fa";
 
 const MyArtsCrafts = () => {
     const [items, setItems] = useState([])
@@ -15,6 +16,7 @@ const MyArtsCrafts = () => {
             })
     }, [user])
     const handleDelete = (id) => {
+
 
         Swal.fire({
             title: "Are you sure?",
@@ -47,21 +49,40 @@ const MyArtsCrafts = () => {
             }
         });
     }
+
+    const hanldeSort = () => {
+        console.log("sorting")
+    }
     return (
         <div>
             <Helmet>
                 <title>CraftXtore | My Art&Craft</title>
             </Helmet>
-            <h1 className="md:text-5xl font-bold text-center text-orange-500 mb-6">My Art&Craft List</h1>
-            <div className="">
-                {
-                    items?.map(i => (
-                        <div key={i._id}>
-                            <MyAddedCard item={i} handleDelete={handleDelete}></MyAddedCard>
-                        </div>
-                    ))
-                }
+            <div className="flex items-center justify-center mb-4">
+                <details className="dropdown">
+                    <summary className="m-1 btn px-8"><FaFilter />Filter</summary>
+                    <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                        <li><a onClick={hanldeSort} className="  text-black font-semibold !text-[16px]">Customization</a></li>
+                    </ul>
+                </details>
             </div>
+            {items.length > 0 ? <>
+                <h1 className="md:text-5xl  font-bold text-center text-orange-500 mb-6">My Art&Craft List</h1>
+                <div className="">
+                    {
+                        items?.map(i => (
+                            <div key={i._id}>
+                                <MyAddedCard item={i} handleDelete={handleDelete}></MyAddedCard>
+                            </div>
+                        ))
+                    }
+                </div>
+            </> : <div className="mb-10 h-[300px] md:h-[400px] flex items-center justify-center">
+                <h1 className="text-3xl text-center text-orange-500">YOU DID NOT ADD ANY ITEM<br />NOTHING TO SHOW</h1>
+            </div>
+
+            }
+
         </div>
     );
 };

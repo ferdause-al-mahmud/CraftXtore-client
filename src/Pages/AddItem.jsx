@@ -57,72 +57,72 @@ const AddItem = () => {
             </Helmet>
 
             <h1 className='text-3xl md:text-6xl mb-8 text-center text-orange-400'>Add Item</h1>
-            <form onSubmit={handleAdd}>
+            <form onSubmit={handleAdd} className="">
                 <div className='md:flex gap-4'>
                     <label className="form-control md:w-1/2">
                         <div className="label">
-                            <span className="label-text">Item Name</span>
+                            <span className="label-text text-black font-semibold !text-xl">Item Name</span>
                         </div>
-                        <input type="text" name='name' required placeholder="Type here" className="input  w-full" />
+                        <input type="text" name='name' required placeholder="Type here" className="!bg-white  input w-full" />
 
                     </label>
                     <label className="form-control md:w-1/2">
                         <div className="label">
-                            <span className="label-text">Sub Category</span>
+                            <span className="label-text  text-black font-semibold !text-xl">Sub Category</span>
                         </div>
-                        <input type="text" name='quantity' required placeholder="Type here" className="input  w-full" />
+                        <input type="text" name='quantity' required placeholder="Type here" className="!bg-white  input  w-full" />
                     </label>
                 </div>
                 <br />
                 <div className='md:flex gap-4'>
                     <label className="form-control md:w-1/2">
                         <div className="label">
-                            <span className="label-text">Price</span>
+                            <span className="label-text  text-black font-semibold !text-xl">Price</span>
                         </div>
-                        <input type="text" name='price' required placeholder="Type here" className="input  w-full" />
+                        <input type="text" name='price' required placeholder="Type here" className="!bg-white  input  w-full" />
 
                     </label>
                     <label className="form-control md:w-1/2">
                         <div className="label">
-                            <span className="label-text">Rating</span>
+                            <span className="label-text  text-black font-semibold !text-xl">Rating</span>
                         </div>
-                        <input type="text" name='rating' required placeholder="Type here" className="input  w-full" />
+                        <input type="text" name='rating' required placeholder="Type here" className="!bg-white  input  w-full" />
                     </label>
                 </div>
                 <br />
                 <div className='md:flex gap-4'>
                     <div className="md:w-1/2">
-                        <span className="label-text">Customization</span>
+                        <span className="label-text  text-black font-semibold !text-xl">Customization</span>
                         <br />
                         <div className="flex gap-8">
                             <div className="form-control">
                                 <label className="label cursor-pointer gap-4">
-                                    <span className="label-text">Yes</span>
-                                    <input type="radio" className="radio" name="customization" required value="Yes" />
+                                    <span className="label-text  text-black font-semibold !text-xl">Yes</span>
+                                    <input type="radio" className="radio radio-success" name="customization" required value="Yes" />
                                 </label>
                             </div>
                             <div className="form-control">
                                 <label className="label cursor-pointer  gap-4">
-                                    <span className="label-text">No</span>
-                                    <input type="radio" className="radio" name="customization" required value="No" />
+                                    <span className="label-text  text-black font-semibold !text-xl">No</span>
+                                    <input type="radio" className="radio radio-success" name="customization" required value="No" />
                                 </label>
                             </div>
                         </div>
                     </div>
                     <div className="md:w-1/2">
-                        <span className="label-text">Stock Status</span>
+                        <span className="label-text  text-black font-semibold !text-xl">Stock Status</span>
                         <br />
                         <div className="flex gap-8">
                             <div className="form-control">
                                 <label className="label cursor-pointer gap-4">
-                                    <span className="label-text">In stock</span>
-                                    <input type="radio" className="radio" name="stock" required value="In stock" />
+                                    <span className="label-text  text-black font-semibold !text-xl">In stock</span>
+                                    <input type="radio" className="radio radio-success" name="stock" required value="In stock" />
                                 </label>
                             </div>
                             <div className="form-control">
                                 <label className="label cursor-pointer  gap-4">
-                                    <span className="label-text"> Made to Order</span>
-                                    <input type="radio" className="radio" name="stock" required value="Made to Order" />
+                                    <span className="label-text  text-black font-semibold !text-xl"> Made to Order</span>
+                                    <input type="radio" className="radio radio-success" name="stock" required value="Made to Order" />
                                 </label>
                             </div>
                         </div>
@@ -133,9 +133,9 @@ const AddItem = () => {
                 <div className='md:flex gap-4'>
                     <label className="form-control md:w-1/2">
                         <div className="label">
-                            <span className="label-text">Processing Time</span>
+                            <span className="label-text  text-black font-semibold !text-xl">Processing Time</span>
                         </div>
-                        <input type="text" name='time' required placeholder="Type here" className="input  w-full" />
+                        <input type="text" name='time' required placeholder="Type here" className="!bg-white  input  w-full" />
 
                     </label>
                 </div>
@@ -143,19 +143,19 @@ const AddItem = () => {
                 <div className='md:flex gap-2'>
                     <label className="form-control w-full">
                         <div className="label">
-                            <span className="label-text">Description
+                            <span className="label-text  text-black font-semibold !text-xl">Description
                             </span>
                         </div>
-                        <textarea className="resize-none p-4 w-full rounded-lg " required placeholder="Type here" name="description" rows="4" ></textarea>
+                        <textarea className="!bg-white resize-none p-4 w-full rounded-lg " required placeholder="Type here" name="description" rows="4" ></textarea>
                     </label>
                 </div>
                 <br />
                 <div className='md:flex gap-4'>
                     <label className="form-control w-full">
                         <div className="label">
-                            <span className="label-text">Photo Url</span>
+                            <span className="label-text  text-black font-semibold !text-xl">Photo Url</span>
                         </div>
-                        <input type="text" name='photo' required placeholder="Url" className="input  w-full" />
+                        <input type="text" name='photo' required placeholder="Url" className="input !bg-white   w-full" />
                     </label>
                 </div>
                 <br />
