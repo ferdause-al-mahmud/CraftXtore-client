@@ -7,14 +7,19 @@ import { FaFilter } from "react-icons/fa";
 
 const MyArtsCrafts = () => {
     const [items, setItems] = useState([])
+    const [originalItems, setOriginalItems] = useState([]);
     const { user } = UseAuth() || {};
     useEffect(() => {
         fetch(`http://localhost:3333/myitems/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setItems(data)
+                setOriginalItems(data)
             })
     }, [user])
+    const handleAll = () => {
+        setItems(originalItems)
+    }
     const handleDelete = (id) => {
 
 
@@ -50,19 +55,21 @@ const MyArtsCrafts = () => {
         });
     }
 
-    const hanldeSort = () => {
-        console.log("sorting")
+    const handleFilter = () => {
+        const filteredItems = items.filter(item => item.customization === "Yes");
+        setItems(filteredItems);
     }
     return (
         <div>
             <Helmet>
                 <title>CraftXtore | My Art&Craft</title>
             </Helmet>
-            <div className="flex items-center justify-center mb-4">
+            <div className="flex items-center justify-center mb-6">
                 <details className="dropdown">
                     <summary className="m-1 btn px-8"><FaFilter />Filter</summary>
-                    <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                        <li><a onClick={hanldeSort} className="  text-black font-semibold !text-[16px]">Customization</a></li>
+                    <ul className="p-2 shadow menu dropdown-content bg-[#7eb2f7] z-[1]  rounded-box w-52">
+                        <li><a onClick={handleAll} className="  text-black font-semibold !text-[16px]">All</a></li>
+                        <li><a onClick={handleFilter} className="  text-black font-semibold !text-[16px]">Customization</a></li>
                     </ul>
                 </details>
             </div>
