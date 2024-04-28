@@ -14,9 +14,7 @@ const MyArtsCrafts = () => {
                 setItems(data)
             })
     }, [user])
-    console.log(items)
     const handleDelete = (id) => {
-        console.log(id)
 
         Swal.fire({
             title: "Are you sure?",

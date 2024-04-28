@@ -10,6 +10,7 @@ import AllArts from "../Pages/AllArts";
 import MyArtsCrafts from "../Pages/MyArtsCrafts";
 import ItemDetails from "../Components/ItemDetails/ItemDetails";
 import PrivateRoute from "../Components/Private/PrivateRoute";
+import Update from "../Components/Update/Update";
 
 export const router = createBrowserRouter([
     {
@@ -40,10 +41,16 @@ export const router = createBrowserRouter([
             {
                 path: "/allarts",
                 element: <AllArts></AllArts>,
+                loader: () => fetch('http://localhost:3333/items')
             },
             {
                 path: "/myartscarts",
                 element: <PrivateRoute><MyArtsCrafts></MyArtsCrafts></PrivateRoute>,
+            },
+            {
+                path: "/update/:id",
+                element: <PrivateRoute><Update></Update></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:3333/items/${params.id}`)
             },
 
         ]

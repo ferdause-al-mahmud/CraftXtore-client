@@ -9,7 +9,7 @@ const MyAddedCard = ({ item, handleDelete }) => {
 
     return (
         <div>
-            <div className="card bg-base-200 mb-10">
+            <div className="card bg-[#cda66f] mb-10">
                 <div className="hero-content flex-col md:flex-row">
                     <img src={photo} className="md:w-[30%] md:max-w-md rounded-lg shadow-2xl" />
                     <div className="md:w-[70%]">
@@ -34,7 +34,7 @@ const MyAddedCard = ({ item, handleDelete }) => {
 
                         <div className="flex justify-center text-2xl mt-2 gap-3 md:gap-8">
                             <button onClick={() => handleDelete(_id)} className="bg-red-400 p-4 rounded-lg hover:bg-opacity-70"><MdDelete /></button>
-                            <Link className="bg-green-400 p-4 rounded-lg  hover:bg-opacity-70"><FaEdit /></Link>
+                            <Link to={`/update/${_id}`} className="bg-green-400 p-4 rounded-lg  hover:bg-opacity-70"><FaEdit /></Link>
                         </div>
                     </div>
                 </div>
