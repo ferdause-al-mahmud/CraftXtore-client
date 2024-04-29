@@ -42,7 +42,6 @@ export const router = createBrowserRouter([
             {
                 path: "/allarts",
                 element: <AllArts></AllArts>,
-                loader: () => fetch('https://server-side-dsbk3p7x6-ferdause-al-mahmuds-projects.vercel.app/items')
             },
             {
                 path: "/myartscarts",
