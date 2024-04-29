@@ -11,6 +11,7 @@ import MyArtsCrafts from "../Pages/MyArtsCrafts";
 import ItemDetails from "../Components/ItemDetails/ItemDetails";
 import PrivateRoute from "../Components/Private/PrivateRoute";
 import Update from "../Components/Update/Update";
+import SpecificSubcategory from "../Components/SpecificSubcategory/SpecificSubcategory";
 
 export const router = createBrowserRouter([
     {
@@ -52,6 +53,11 @@ export const router = createBrowserRouter([
                 element: <PrivateRoute><Update></Update></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:3333/items/${params.id}`)
             },
+            {
+                path: "/subcategory/:subcategory_Name",
+                element: <SpecificSubcategory></SpecificSubcategory>,
+            },
+
 
         ]
     },

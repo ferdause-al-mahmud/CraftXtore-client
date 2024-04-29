@@ -3,6 +3,7 @@ import Banner from "../Components/Banner/Banner";
 import CraftItem from "../Components/CraftItem/CraftItem";
 import Blog from "../Components/Blog/Blog";
 import Offer from "../Components/Offer/Offer";
+import CategoriesSection from "../Components/CategoriesSection/CategoriesSection";
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <Banner></Banner>
             <CraftItem></CraftItem>
             <Offer></Offer>
+            <CategoriesSection></CategoriesSection>
             <Blog></Blog>
         </div>
     );

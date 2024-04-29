@@ -104,13 +104,13 @@ const Update = () => {
                             <div className="form-control">
                                 <label className="label cursor-pointer gap-4">
                                     <span className="label-text   text-black font-semibold !text-xl">Yes</span>
-                                    <input type="radio" className="radio" defaultChecked={customization === 'Yes'} name="customization" required value="Yes" />
+                                    <input type="radio" className="radio  radio-success" defaultChecked={customization === 'Yes'} name="customization" required value="Yes" />
                                 </label>
                             </div>
                             <div className="form-control">
                                 <label className="label cursor-pointer  gap-4">
                                     <span className="label-text   text-black font-semibold !text-xl">No</span>
-                                    <input type="radio" className="radio" defaultChecked={customization === 'No'} name="customization" required value="No" />
+                                    <input type="radio" className="radio  radio-success" defaultChecked={customization === 'No'} name="customization" required value="No" />
                                 </label>
                             </div>
                         </div>
@@ -122,13 +122,13 @@ const Update = () => {
                             <div className="form-control">
                                 <label className="label cursor-pointer gap-4">
                                     <span className="label-text   text-black font-semibold !text-xl">In stock</span>
-                                    <input type="radio" className="radio" defaultChecked={stockStatus === 'In stock'} name="stock" required value="In stock" />
+                                    <input type="radio" className="radio  radio-success" defaultChecked={stockStatus === 'In stock'} name="stock" required value="In stock" />
                                 </label>
                             </div>
                             <div className="form-control">
                                 <label className="label cursor-pointer  gap-4">
                                     <span className="label-text   text-black font-semibold !text-xl"> Made to Order</span>
-                                    <input type="radio" className="radio" name="stock" defaultChecked={stockStatus === 'Made to Order'} required value="Made to Order" />
+                                    <input type="radio" className="radio radio-success" name="stock" defaultChecked={stockStatus === 'Made to Order'} required value="Made to Order" />
                                 </label>
                             </div>
                         </div>

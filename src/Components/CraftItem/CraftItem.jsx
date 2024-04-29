@@ -13,23 +13,17 @@ const CraftItem = () => {
     }, [])
 
     const [text] = useTypewriter({
-        words: ['Products'],
-    })
-    const [para] = useTypewriter({
-        words: ['Discover the artistry of ceramics & pottery: from timeless clay-made vessels to elegant porcelain pieces, explore our curated selection of stoneware, terra cotta, architectural ceramics, and home decor pottery crafted to elevate your space with beauty and functionality.'],
-        loop: 1,
+        words: ['Our Products', 'Your Satisfaction'],
+        loop: 1000,
     })
 
     return (
         <div className="mb-10">
             <div className="mb-8">
-                <h1 className="text-2xl md:text-5xl font-semibold text-center mb-3">Our
-                    <span> {text}</span>
+                <h1 className="text-2xl md:text-5xl font-semibold text-center mb-3"><span>{text}</span>
                     <Cursor cursorColor='red' />
                 </h1>
-                <p className="text-center text-[16px] md:text-xl text-gray-600 mb-6 px-4 md:p-0 md:w-[70%] mx-auto">
-                    <span> {para}</span>
-                    <Cursor cursorColor='red' /></p>
+                <p className="text-center text-[16px] md:text-xl text-gray-600 mb-6 px-4 md:p-0 md:w-[70%] mx-auto">Discover the artistry of ceramics & pottery: from timeless clay-made vessels to elegant porcelain pieces, explore our curated selection of stoneware, terra cotta, architectural ceramics, and home decor pottery crafted to elevate your space with beauty and functionality.</p>
             </div>
             <div className="grid p-4 md:p-0 gap-4 grid-cols-1 md:grid-cols-2">
                 {
