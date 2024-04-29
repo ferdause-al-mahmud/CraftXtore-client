@@ -4,12 +4,19 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 const CraftItem = () => {
     const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         fetch('https://server-side-dsbk3p7x6-ferdause-al-mahmuds-projects.vercel.app/items')
             .then(res => res.json())
             .then(data => {
                 setItems(data);
+                setLoading(false);
             })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                setLoading(false);
+            });
     }, [])
 
     const [text] = useTypewriter({
@@ -25,11 +32,16 @@ const CraftItem = () => {
                 </h1>
                 <p className="text-center text-[16px] md:text-xl text-gray-600 mb-6 px-4 md:p-0 md:w-[70%] mx-auto">Discover the artistry of ceramics & pottery: from timeless clay-made vessels to elegant porcelain pieces, explore our curated selection of stoneware, terra cotta, architectural ceramics, and home decor pottery crafted to elevate your space with beauty and functionality.</p>
             </div>
-            <div className="grid p-4 md:p-0 gap-4 grid-cols-1 md:grid-cols-2">
-                {
-                    items.slice(0, 6).map((item) => <CraftItemCard key={item._id} item={item}></CraftItemCard>)
-                }
-            </div>
+            {loading ? (
+                <div className="flex justify-center items-center h-[50vh]">
+                    <div className="loading loading-spinner loading-lg"></div>
+                </div>
+            ) :
+                (<div className="grid p-4 md:p-0 gap-4 grid-cols-1 md:grid-cols-2">
+                    {
+                        items.slice(0, 6).map((item) => <CraftItemCard key={item._id} item={item}></CraftItemCard>)
+                    }
+                </div>)}
         </div>
     );
 };
