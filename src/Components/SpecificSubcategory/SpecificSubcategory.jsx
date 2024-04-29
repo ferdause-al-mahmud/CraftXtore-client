@@ -15,7 +15,7 @@ const SpecificSubcategory = () => {
     }, [subcategory_Name])
     return (
         <div>
-            <div className="grid p-4 md:p-0 gap-4 grid-cols-1 md:grid-cols-2">
+            <div className="grid p-4 md:p-0 gap-4 grid-cols-1">
                 {
                     items.map((item) => <CraftItemCard key={item._id} item={item}></CraftItemCard>)
                 }
