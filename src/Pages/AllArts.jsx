@@ -1,8 +1,17 @@
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AllArts = () => {
-    const allItems = useLoaderData()
+    const [allItems, setAllItems] = useState([]);
+    useEffect(() => {
+        fetch('https://server-side-dsbk3p7x6-ferdause-al-mahmuds-projects.vercel.app/items')
+            .then(res => res.json())
+            .then(data => {
+                setAllItems(data)
+            })
+    }, [])
+
     return (
         <div>
             <Helmet>

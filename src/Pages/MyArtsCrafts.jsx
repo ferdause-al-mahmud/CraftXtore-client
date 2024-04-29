@@ -10,7 +10,7 @@ const MyArtsCrafts = () => {
     const [originalItems, setOriginalItems] = useState([]);
     const { user } = UseAuth() || {};
     useEffect(() => {
-        fetch(`http://localhost:3333/myitems/${user?.email}`)
+        fetch(`https://server-side-dsbk3p7x6-ferdause-al-mahmuds-projects.vercel.app/myitems/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setItems(data)
@@ -34,7 +34,7 @@ const MyArtsCrafts = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:3333/items/${id}`, {
+                fetch(`https://server-side-dsbk3p7x6-ferdause-al-mahmuds-projects.vercel.app/items/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

@@ -5,7 +5,7 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 const CraftItem = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3333/items')
+        fetch('https://server-side-dsbk3p7x6-ferdause-al-mahmuds-projects.vercel.app/items')
             .then(res => res.json())
             .then(data => {
                 setItems(data);

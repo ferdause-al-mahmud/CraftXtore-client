@@ -32,7 +32,7 @@ const AddItem = () => {
             user_email: email,
             user_name: name
         };
-        fetch('http://localhost:3333/items', {
+        fetch('https://server-side-dsbk3p7x6-ferdause-al-mahmuds-projects.vercel.app/items', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

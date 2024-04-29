@@ -42,7 +42,7 @@ export const router = createBrowserRouter([
             {
                 path: "/allarts",
                 element: <AllArts></AllArts>,
-                loader: () => fetch('http://localhost:3333/items')
+                loader: () => fetch('https://server-side-dsbk3p7x6-ferdause-al-mahmuds-projects.vercel.app/items')
             },
             {
                 path: "/myartscarts",
@@ -51,7 +51,7 @@ export const router = createBrowserRouter([
             {
                 path: "/update/:id",
                 element: <PrivateRoute><Update></Update></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3333/items/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-side-dsbk3p7x6-ferdause-al-mahmuds-projects.vercel.app/items/${params.id}`)
             },
             {
                 path: "/subcategory/:subcategory_Name",

@@ -6,7 +6,7 @@ const ItemDetails = () => {
 
     const [item, setItem] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:3333/items/${id}`)
+        fetch(`https://server-side-dsbk3p7x6-ferdause-al-mahmuds-projects.vercel.app/items/${id}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data)
