@@ -1,7 +1,8 @@
 
 const Blog = () => {
     return (
-        <div className=" mb-10 mt-[100px]">
+        <div data-aos="zoom-in" data-aos-duration="1000"
+            className=" mb-10 mt-[100px]">
 
             <h1 className="text-2xl md:text-5xl font-semibold text-center mb-4">Latest Update</h1>
 

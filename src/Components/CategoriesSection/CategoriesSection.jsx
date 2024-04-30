@@ -17,14 +17,14 @@ const CategoriesSection = () => {
             });
     }, [])
     return (
-        <div className="mb-10">
+        <div data-aos="fade-down" data-aos-duration="1000" className="mb-10">
             <h1 className="text-2xl md:text-5xl font-semibold text-center mb-4">Categories</h1>
             {loading ? ( // Display loading spinner if loading is true
                 <div className="flex justify-center items-center h-[50vh]">
                     <div className="loading loading-spinner loading-lg"></div>
                 </div>
             ) :
-                (<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                (<div className="grid grid-cols-1  md:grid-cols-2 gap-6">
                     {
                         items.map(item => <CategoriesCard key={item._id} catagory={item}></CategoriesCard>)
                     }

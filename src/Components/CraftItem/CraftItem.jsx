@@ -25,7 +25,7 @@ const CraftItem = () => {
     })
 
     return (
-        <div className="mb-10">
+        <div data-aos="zoom-in-up" data-aos-duration="1000" className="mb-10 ">
             <div className="mb-8">
                 <h1 className="text-2xl md:text-5xl font-semibold text-center mb-3"><span>{text}</span>
                     <Cursor cursorColor='red' />

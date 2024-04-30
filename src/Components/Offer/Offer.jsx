@@ -9,7 +9,7 @@ const Offer = () => {
         onLoopDone: () => console.log(`loop completed after 3 runs.`)
     })
     return (
-        <div className=" mb-10 mt-[100px]">
+        <div data-aos="fade-up-right" data-aos-duration="1000" className=" mb-10 mt-[100px]">
 
             <h1 className="text-2xl md:text-5xl font-semibold text-center mb-4">Our Offer </h1>
             <p className="text-center text-[16px] md:text-xl text-gray-600 mb-6 px-4 md:p-0 md:w-[70%] mx-auto">Unlock artisanal elegance with our exclusive offer! Spend $39.99 and explore a world of craftsmanship. From clay-made pottery to stoneware and porcelain, discover exquisite pieces to elevate your home decor. Shop now and elevate your space with timeless charm!</p>
