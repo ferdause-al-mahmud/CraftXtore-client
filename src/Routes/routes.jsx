@@ -50,7 +50,7 @@ export const router = createBrowserRouter([
             {
                 path: "/update/:id",
                 element: <PrivateRoute><Update></Update></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://server-side-dsbk3p7x6-ferdause-al-mahmuds-projects.vercel.app/items/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-side-eight-topaz.vercel.app/items/${params.id}`)
             },
             {
                 path: "/subcategory/:subcategory_Name",

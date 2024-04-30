@@ -7,7 +7,7 @@ const ItemDetails = () => {
     const [item, setItem] = useState({})
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch(`https://server-side-dsbk3p7x6-ferdause-al-mahmuds-projects.vercel.app/items/${id}`)
+        fetch(`https://server-side-eight-topaz.vercel.app/items/${id}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data)
