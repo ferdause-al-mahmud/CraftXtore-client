@@ -8,7 +8,7 @@ const SpecificSubcategory = () => {
     const [loading, setLoading] = useState(true);
     console.log(subcategory_Name)
     useEffect(() => {
-        fetch(`https://server-side-dsbk3p7x6-ferdause-al-mahmuds-projects.vercel.app/items/cata/${subcategory_Name}`)
+        fetch(`https://server-side-dsbk3p7x6-ferdause-al-mahmuds-projects.vercel.app/items/catagory/${subcategory_Name}`)
             .then(res => res.json())
             .then(data => {
                 setItems(data)
