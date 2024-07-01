@@ -7,7 +7,7 @@ const CraftItem = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://server-side-eight-topaz.vercel.app/items')
+        fetch('https://craftxstore.vercel.app/items')
             .then(res => res.json())
             .then(data => {
                 setItems(data);

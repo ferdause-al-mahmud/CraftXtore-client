@@ -32,7 +32,7 @@ const AddItem = () => {
             user_email: email,
             user_name: name
         };
-        fetch('https://server-side-eight-topaz.vercel.app/items', {
+        fetch('https://craftxstore.vercel.app/items', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

@@ -11,7 +11,7 @@ const MyArtsCrafts = () => {
     const [originalItems, setOriginalItems] = useState([]);
     const { user } = UseAuth() || {};
     useEffect(() => {
-        fetch(`https://server-side-eight-topaz.vercel.app/myitems/${user?.email}`)
+        fetch(`https://craftxstore.vercel.app/myitems/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setItems(data)
@@ -40,7 +40,7 @@ const MyArtsCrafts = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://server-side-eight-topaz.vercel.app/items/${id}`, {
+                fetch(`https://craftxstore.vercel.app/items/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

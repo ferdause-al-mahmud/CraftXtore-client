@@ -8,7 +8,7 @@ const SpecificSubcategory = () => {
     const [loading, setLoading] = useState(true);
     console.log(subcategory_Name)
     useEffect(() => {
-        fetch(`https://server-side-eight-topaz.vercel.app/items/catagory/${subcategory_Name}`)
+        fetch(`https://craftxstore.vercel.app/items/catagory/${subcategory_Name}`)
             .then(res => res.json())
             .then(data => {
                 setItems(data)

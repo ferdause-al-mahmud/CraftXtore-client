@@ -20,4 +20,19 @@ Welcome to CraftXtore, your go-to destination for all things ceramics and potter
 - **React Simple Typewriter:** Add engaging text effects to captivate visitors and convey messages effectively.
 - **AOS Animation:** Implement smooth animations to create visually appealing transitions and interactions.
 
+### Prerequisites
+
+Ensure you have the following installed on your device:
+
+- [Node.js](https://nodejs.org/) (v14.x or later)
+- [npm](https://www.npmjs.com/) (v6.x or later)
+- [Git](https://git-scm.com/)
+
+### Installation
+
+1. **Clone the Repository**
+2. **cd to the directory**
+3. **npm install**
+4. **npm run dev**
+
 Thank you for choosing CraftXtore for all your ceramics and pottery needs! If you have any questions or feedback, feel free to reach out to us. Happy crafting!

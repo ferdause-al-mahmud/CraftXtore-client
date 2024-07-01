@@ -5,7 +5,7 @@ const CategoriesSection = () => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch('https://server-side-eight-topaz.vercel.app/categories')
+        fetch('https://craftxstore.vercel.app/categories')
             .then(res => res.json())
             .then(data => {
                 setItems(data);
