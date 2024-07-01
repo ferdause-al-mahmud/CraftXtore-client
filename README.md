@@ -2,6 +2,8 @@
 
 Welcome to CraftXtore, your go-to destination for all things ceramics and pottery!
 
+server side: (https://github.com/ferdause-al-mahmud/CraftXtore-server)
+
 ## Live Link
 
 [CraftXtore](https://craftxtore.web.app/)
